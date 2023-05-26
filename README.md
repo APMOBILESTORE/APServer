@@ -20,7 +20,7 @@ Icecast- icecast_win32_2.4.4
 https://www.icecast.org
 ===========================================
 Extract Files
-1. Make Folder "APServer" any in "Drive", Extract all file and folder in "APServer".
+1. Make Folder "APServer" in any "Drive", Extract all (APServer.bat, Console.exe, Start_Services.bat, Stop_Service.bat) file and folder (Support) in "APServer".
 2. Make folder "apache" in folder "APServer"
 3. Extrect: File httpd-2.4.56-win64-VS17 to "APServer\apache\"
 4. Make folder "php" in folder "APServer"
@@ -37,5 +37,9 @@ Extract Files
 =======================================================================
 1. Run start_service.bat
 2. Run APServer.bat
+===========================================================================
+Your phpMYAdmin user name is : root
+Your MiniSIPServer admin temporary password store in file path: "APServer\sip\log\xxx.txt"
+Your Icecast admin user name/password is : admin/admin
 
 
