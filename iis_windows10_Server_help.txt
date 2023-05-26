@@ -1,0 +1,150 @@
+How to Start IIS http php mysql phpMyAdmin webserver?
+-----------------------------------------------------------------------
+Step 1: Start http server.
+Goto
+Control Panel>Program File and Fatures>Trun Windows features on or off>
+Tik On
+Internet Information Service
+Ok
+And wait for finish.
+Go to browser: type localhost
+You page is show
+Ok
+Webserver is start.
+--------------------------------------------------------------------------
+Step 2: Start php server.
+	Step A:Copy php folder in C:\
+	Step B: Add the path to your PHP installation folder to the end of the Variable value, for example ;C:\PHP. Click OK.
+	Step C: Control Panel>Program File and Fatures>Trun Windows features on or off>
+			Extend >Internet Information Service>World Wide Web Services>Application Development Features
+			Tik On>CGI
+			Ok and wait for finish.
+--------------------------------------
+Step 3:
+Start IIS Manager by clicking on Start, Programs, Administrative Tools, and then Internet Information Services (IIS) Manager.
+From the IIS Manager, click on the hostname of your server in the Connections panel on the left.
+Double-click on the Handler Mappings icon.
+Handling Mapings
+Add Module Mapping
+Request path: *.php
+Module: FastCgiModule
+Executable: C:\php\php-cgi.exe
+Name: FastCGI
+Click OK, and then click Yes.
+In the left panel, click on your server's hostname, and then double-click on the Default Document icon.
+From the Actions panel on the right, click Add.
+Enter index.php as the new default document name, and then click OK.
+Enter default.php as the new default document name, and then click OK.
+In the left panel, click on your server's hostname.
+In the Actions panel on the right, click Restart.
+Create a new text document, and save it as c:\inetpub\wwwroot\index.php with the following content:
+Copy
+<?php phpinfo(); ?>
+You should now see the Error: The FastCGI process exited unexpectedly.
+Please Install - VC_redist 2015-2022.
+You should now see the PHP information page at http://localhost/index.php.
+Ok
+---------------------------------------------------------------------------
+Step 4:
+Now
+Copy phpMyAdmin to C:\inetpub\wwwroot
+You should now see the PHP information page at http://localhost/phpMyAdmin
+If Show Error: The mysqli extension is missing. Please check your PHP configuration. See our documentation for more information.
+Then
+---------------------------------------------------------------------------
+Step 5
+:Goto C:\Php\
+Rename php.ini-development to php.ini
+Edit: php.ini
+fastcgi.impersonate = 1
+cgi.fix_pathinfo = 0
+cgi.force_redirect = 0
+extension_dir = "DiveName:\pathphp\ext"
+extension=mysqli
+extension=pdo_mysql
+Creat Folder In "DiveName:\tmp"
+session.save_path = "C:/tmp"
+upload_tmp_dir = "C:/tmp"
+-------------------------------------------------------------------------
+Open IIS Manager.
+In the Features view, double-click Directory Browsing.
+On the Directory Browsing page, in the Actions pane, click Enable.
+Restart Server And Refresh Page
+You should now see the PHP information page at http://localhost/phpMyAdmin
+Ok
+--------------------------------------------------------------------------
+Step 6
+Install Mysql
+C:\MySQL
+Select Server Configuration Type: Server Computer
+Type Mysql Password: root
+You should now see the PHP information page at http://localhost/phpMyAdmin
+Enter User Name: root
+Enter Password : root
+Ok
+If Show Error: The mbstring PHP extension was not found and you seem to be using a multibyte charset. Without the mbstring extension phpMyAdmin is unable to split strings correctly and it may result in unexpected results.
+Edit: C:\Php\php.ini
+extension=mbstring
+Restart Server And Refresh Page
+OK
+If Show Error: The configuration file needs a valid key for cookie encryption. A temporary key was automatically generated for you. Please refer to the documentation.
+-------------------------------------------------------------
+Step 5
+Goto C:\inetpub\wwwroot\phpMyAdmin\
+Rename config.sample.inc.php to config.inc.php
+Edit: config.inc.php
+$cfg['blowfish_secret'] = 'JOFw435365IScA&Q!cDugr!lSfuAz*OW';
+Restart Server And Refresh Page
+OK
+If Show Error:  The $cfg['TempDir'] (C:\inetpub\wwwroot\phpMyAdmin\tmp\) is not accessible. phpMyAdmin is not able to cache templates and will be slow because of this.
+Add Line: config.inc.php
+$cfg['TempDir'] = '/tmp';
+Restart Server And Refresh Page
+OK
+If Show Error:The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated. Find out why.
+Or alternately go to 'Operations' tab of any database to set it up there.
+Click On Error Line>  "Find out why."
+Click On >  "Create"
+Click On Home Icon This Page.
+Ok
+-------------------------------------------------------------
+Step 6
+Add SSL Certificate
+Start IIS Manager by clicking on Start, Programs, Administrative Tools, and then Internet Information Services (IIS) Manager.
+From the IIS Manager, click on the hostname of your server in the Connections panel on the left.
+Click to Server Certificates
+Look at the right panel; you will find "Create Self-Signed Certificate"; click on it.
+Enter the friendly name for SSL
+click on OK button
+Now navigate to "Site List" and right-click on that to choose the "Edit Binding"
+Click Add>Select Type "https">hostname:localhost>
+Select your >SSL Certificate>click on OK button>
+Restart Server And Go> page at https://localhost
+Ok
+-------------------------------------------------------------
+Step 7: Start ftp server.
+Goto
+Control Panel>Program File and Fatures>Trun Windows features on or off>
+Extend>Internet Information Service
+Extend>FTP Server
+Tik on >FTP Extensibility
+Tik on >FTP Service
+Ok
+And wait for finish.
+Start IIS Manager by clicking on Start, Programs, Administrative Tools, and then Internet Information Services (IIS) Manager.
+Click On Site
+Add FTP Site
+Type FTP Site Name: xxxx
+Select Physical Path: C:\inetpub\ftproot
+Next
+Tik No SSL
+Next
+Authentication:Select Anonymous
+Authorization, Allow acces to: Anonymous user
+Permission: Read
+Finish
+Open file browser
+Type ftp://localhost/
+Ok
+FTP server is start.
+Enjoy
