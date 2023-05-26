@@ -2,12 +2,23 @@
 APServer
 First Download Files
 =========================================
-Apache - httpd-2.4.56-win64-VS17 https://httpd.apache.org
-PHP - php-8.2.4-Win32-vs16-x64 https://www.php.net/
-MySql - mysql-8.0.32-winx64 https://dev.mysql.com
-phpMyAdmin - phpMyAdmin-5.2.1-all-languages https://www.phpmyadmin.net
-MiniSIPServer- mss_v40_u5 https://www.myvoipapp.com
-Icecast- icecast_win32_2.4.4 https://www.icecast.org
+Apache - httpd-2.4.56-win64-VS17
+https://httpd.apache.org
+
+PHP - php-8.2.4-Win32-vs16-x64
+https://www.php.net/
+
+MySql - mysql-8.0.32-winx64
+https://dev.mysql.com
+
+phpMyAdmin - phpMyAdmin-5.2.1-all-languages 
+https://www.phpmyadmin.net
+
+MiniSIPServer- mss_v40_u5 
+https://www.myvoipapp.com
+
+Icecast- icecast_win32_2.4.4 
+https://www.icecast.org
 ===========================================
 Extract Files
 1. Make Folder "APServer" any in "Drive", Extract all file and folder in "APServer".
