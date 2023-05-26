@@ -31,13 +31,11 @@ Extract Files
 9. Extrect:  File mss_v40_u5 to "APServer\sip\"
 10. Make folder "icecast" in folder "APServer"
 11. Extrect:  File icecast_win32_2.4.4 to "APServer\icecast\"
-12. 8. Make folder "www" in folder "APServer"
+12. Make folder "www" in folder "APServer"
 13. Make folder "phpMyAdmin" in folder "www"
 14. Extrect:  File phpMyAdmin-5.2.1-all-languages "APServer\www\phpMyAdmin"
-=======================================================================
-1. Run start_service.bat
-2. Run APServer.bat
-===========================================================================
+15. Run start_service.bat
+16. Run APServer.bat
 
 Your phpMYAdmin user name is : root
 
