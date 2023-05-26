@@ -38,6 +38,7 @@ Extract Files
 1. Run start_service.bat
 2. Run APServer.bat
 ===========================================================================
+
 Your phpMYAdmin user name is : root
 
 Your MiniSIPServer admin temporary password store in file path: "APServer\sip\log\xxx.txt"
