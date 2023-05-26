@@ -1,0 +1,16 @@
+APServer V1.0
+
+Apache - httpd-2.4.56-win64-VS17
+PHP - php-8.2.4-Win32-vs16-x64
+MySql - mysql-8.0.32-winx64
+phpMyAdmin - phpMyAdmin-5.2.1-all-languages
+Visual C++ Redist - VC_redist.x64 2015-2020
+MiniSIPServer- mss_v40_u5
+Icecast- icecast_win32_2.4.4
+
+Manoj Kumar
+Badgaon, Saharanpur
+Uttar Pradesh India 247452
+
+Website: https://www.apserver.in
+Email: support@apserver.in
